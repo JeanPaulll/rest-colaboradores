@@ -6,7 +6,6 @@ Prova Full-Stack Developer
 Restful - Colaboradores 
 
 ## Author
-Jean Paul <br />
-jeanpaulrodrigues@hotmail.com <br />
-(61)9 8419-5908
->>>>>>> First Commit - Angular 4
+Jean Paul
+jeanpaulrodrigues@hotmail.com
+(61)9 8419-5908>>>>>>> First Commit - Angular 4
