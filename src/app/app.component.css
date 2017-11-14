@@ -7,3 +7,19 @@ body {
 main {
     flex: 1 0 auto;
 }
+.card-colaborador .card-title{
+    margin-bottom: 0;
+    line-height: 22px;
+}
+
+.card-colaborador .card .card-content {
+    padding: 13px;
+}
+.card-colaborador .cargo,
+.card-colaborador .empresa {
+   color: grey;
+}
+
+/*.card-colaborador .card.horizontal .card-image {*/
+    /*max-width: 31%!important;*/
+/*}*/
