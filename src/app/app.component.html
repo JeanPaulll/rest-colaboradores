@@ -1,8 +1,23 @@
+
+
+<p class="animated bounce">Animate this text!</p>
+<p class="animated infinite bounce">This text will animate infinite times.</p>
+<p class="js-animate">Animate this text dynamically!</p>
+
+<div id="main">
+  <section class="wow fadeInDown" style="background-color: #f1c40f;"></section>
+  <section class="wow pulse" style="background-color: #e74c3c;" data-wow-iteration="infinite" data-wow-duration="1500ms"></section>
+  <section class="section--purple wow slideInRight" data-wow-delay="2s"></section>
+  <section class="section--blue wow bounceInLeft" data-wow-offset="300"></section>
+  <section class="section--green wow slideInLeft" data-wow-duration="4s"></section>
+  <button id="moar">LOAD MOAR!!</button>
+</div>
+
 <div class="container">
   <div class="row">
 
 
-  <div *ngFor="let colaborador of colaboradores" class="col s4 card-colaborador">
+  <div *ngFor="let colaborador of colaboradores" class="col s4 card-colaborador wow flipInX"  data-wow-duration="2s" data-wow-delay="5s">
     <div class="card horizontal">
       <div class="card-image" style="background-color: #444444">
         <img src="assets/colaboradores/1.jpg" height="100" width="100" alt="">
