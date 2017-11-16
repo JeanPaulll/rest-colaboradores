@@ -1,41 +1,62 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import { WOW } from 'wowjs/dist/wow.min';
+
+declare const $: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  title = 'app';
+export class AppComponent implements OnInit, AfterViewInit{
+  public pesquisar: boolean;
 
-  public colaboradores = ['a','b','c','d','e','f','a','b','c','d','e','f'];
+  public colaboradores = [
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+      {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+  ];
 
-    // private animator: AnimationBuilder;
-    //
-    // constructor(animationService: AnimationService, private elementRef: ElementRef) {
-    //     this.animator = animationService.builder();
-    // }
-
-    ngOnInit() {
-
-        let wow = new WOW(
-            {
-                animateClass: 'animated',
-                offset:       100,
-                callback:     function(box) {
-                    console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-                }
-            }
-        );
-        wow.init();
-        document.getElementById('moar').onclick = function() {
-            var section = document.createElement('section');
-            section.className = 'section--purple wow fadeInDown';
-            this.parentNode.insertBefore(section, this);
-        };
-
-
-     //   this.animator.setType('fadeInUp').show(this.elementRef.nativeElement);
+    constructor() {
+        this.pesquisar = false;
     }
+
+    public ngAfterViewInit(){
+        new WOW().init();
+        $(document).on('click','body *',()=>{
+            if($(".label-pesquisa").hasClass("active")){
+                this.pesquisar = true;
+            }else{
+                this.pesquisar = false;
+            }
+        });
+    }
+
+    public anima(idCard){
+        let element = $('#card-colaborador-'+idCard);
+        element.removeClass("wow flipInX",()=>{
+            $(this).remove();
+        });
+        element.removeClass("wow bounceOut",()=>{
+            $(this).remove();
+        });
+        window.setTimeout( ()=>{
+            element.addClass('wow bounceOut');
+        });
+    }
+
+    ngOnInit() { }
 
 }

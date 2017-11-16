@@ -19,7 +19,36 @@ main {
 .card-colaborador .empresa {
    color: grey;
 }
-
-/*.card-colaborador .card.horizontal .card-image {*/
-    /*max-width: 31%!important;*/
-/*}*/
+.pagination li a {
+    color: #d1dbe5;
+}
+.container.menu{
+    /*background-color: yellow;*/
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.container.conteudo{
+    height: 637px;
+    font-family: Roboto, GillSans, Calibri, Trebuchet, sans-serif;
+    border: 1px solid #546c85;
+    border-radius: 10px;
+    background-color: #253647;
+    padding: 15px 20px;
+}
+.brand-logo, .nav-wrapper{
+    font-family: Roboto, GillSans, Calibri, Trebuchet, sans-serif;
+}
+.brand-logo{
+    padding-left: 15px;
+    font-weight: 600;
+}
+.brand-logo span{
+    font-weight: 100;
+}
+.brand-logo span.ponto{
+    font-weight: 600;
+}
+.li-perfil{
+    margin-right: 80px;
+}
