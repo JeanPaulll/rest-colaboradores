@@ -5,7 +5,7 @@ import {PerfilComponent} from "./perfil/perfil.component";
 import {ListColaboradoresComponent} from "./list-colaboradores/list-colaboradores.component";
 
 const routes: Routes = [
-  // {path: '', component: AppComponent},
+  {path: '', component: ListColaboradoresComponent},
   {path: 'perfil', component: PerfilComponent},
   {path: 'colaboradores', component: ListColaboradoresComponent},
   {path: '**', component: ListColaboradoresComponent}
