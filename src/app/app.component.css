@@ -23,19 +23,22 @@ main {
     color: #d1dbe5;
 }
 .container.menu{
-    /*background-color: yellow;*/
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding: 10px;
 }
 .container.conteudo{
-    height: 637px;
+    min-height: 637px;
     font-family: Roboto, GillSans, Calibri, Trebuchet, sans-serif;
     border: 1px solid #546c85;
     border-radius: 10px;
     background-color: #253647;
     padding: 15px 20px;
 }
+.container.conteudo .row{
+    margin-bottom: 0px;
+}
+
 .brand-logo, .nav-wrapper{
     font-family: Roboto, GillSans, Calibri, Trebuchet, sans-serif;
 }
@@ -51,4 +54,12 @@ main {
 }
 .li-perfil{
     margin-right: 80px;
+}
+.container{
+    width: 80%;
+}
+nav.nav-menu{
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
 }

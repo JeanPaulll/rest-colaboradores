@@ -1,6 +1,6 @@
 <div class="container menu">
     <div class="row">
-        <nav>
+        <nav class="nav-menu">
             <ul id="dropdown1" class="dropdown-content">
                 <li><a href="#!">perfil</a></li>
                 <li class="divider"></li>
@@ -38,39 +38,9 @@
         </nav>
     </div>
 </div>
+<router-outlet></router-outlet>
 
-<div class="container conteudo">
-    <div class="row">
-        <div *ngFor="let colaborador of colaboradores; let i = index" class="col s4 card-colaborador wow flipInX"
-             data-wow-duration="1s" [attr.data-wow-delay]="'0.'+i+'s'" [id]="'card-colaborador-'+i" (click)="anima(i)">
-            <div class="card horizontal">
-                <div class="card-image" style="background-color: #444444">
-                    <img src="assets/colaboradores/1.jpg" height="100" width="100" alt="">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <span class="card-title">{{ colaborador.nome }}</span>
-                        <p class="cargo">{{ colaborador.cargo }}</p>
-                        <p class="empresa">{{ colaborador.empresa }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <ul class="pagination">
-            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-            <li class="active blue-grey"><a href="#!">1</a></li>
-            <li class="waves-effect"><a href="#!">2</a></li>
-            <li class="waves-effect"><a href="#!">3</a></li>
-            <li class="waves-effect"><a href="#!">4</a></li>
-            <li class="waves-effect"><a href="#!">5</a></li>
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-        </ul>
-    </div>
-</div>
+
 
 
 <!--<footer class="page-footer">-->
