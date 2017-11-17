@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import { WOW } from 'wowjs/dist/wow.min';
+import {ActivatedRoute, Router} from "@angular/router";
 
 declare const $: any;
 
@@ -10,8 +11,10 @@ declare const $: any;
 })
 export class ListColaboradoresComponent implements OnInit, AfterViewInit {
 
-    public pesquisar: boolean;
-
+    /**
+     * @description Lista de colaboradores, 15 itens por página
+     * @type {[{nome: string; cargo: string; empresa: string}]}
+     */
     public colaboradores = [
         {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
         {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
@@ -28,33 +31,35 @@ export class ListColaboradoresComponent implements OnInit, AfterViewInit {
         {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
         {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
         {nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"},
+
     ];
 
-    constructor() {
-        this.pesquisar = false;
+    constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     }
 
-    public ngAfterViewInit(){
+    public ngAfterViewInit(): void {
+        /*** Init Plugin WOW */
         new WOW().init();
-        $(document).on('click','body *',()=>{
-            if($(".label-pesquisa").hasClass("active")){
-                this.pesquisar = true;
-            }else{
-                this.pesquisar = false;
-            }
-        });
     }
 
-    public anima(idCard){
-        let element = $('#card-colaborador-'+idCard);
+    /**
+     * @description Realiza animação no card e realiza o rediretion
+     * @param idPerfil
+     */
+    public setAnimation(idPerfil): void {
+        let element = $('#card-colaborador-'+idPerfil);
+        const self = this;
         element.removeClass("wow flipInX",()=>{
             $(this).remove();
         });
         element.removeClass("wow bounceOut",()=>{
             $(this).remove();
         });
-        window.setTimeout( ()=>{
-            element.addClass('wow bounceOut');
+        setTimeout( ()=>{
+            element.addClass('wow bounceOut',);
+            setTimeout(()=> {
+                self.router.navigate(['/perfil', idPerfil]);
+            }, 800);
         });
     }
 

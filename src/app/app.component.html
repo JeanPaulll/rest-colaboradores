@@ -2,19 +2,24 @@
     <div class="row">
         <nav class="nav-menu">
             <ul id="dropdown1" class="dropdown-content">
-                <li><a href="#!">perfil</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a href="#!" routerLink="/perfil">perfil</a></li>
                 <li class="divider"></li>
                 <li><a href="#!">sair</a></li>
             </ul>
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo center">Colabo<span>radores</span><span class="ponto">.<span></span></span></a>
+                <a href="javascript:;" routerLink="/colaboradores" class="brand-logo center">Colabo<span>radores</span><span class="ponto">.<span></span></span></a>
                 <ul class="left hide-on-med-and-down">
-                    <li><a href="#">Início</a></li>
-                    <li><a href="javascript:;" (click)="pesquisar=true"><i *ngIf="!pesquisar" class="material-icons">search</i></a></li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a href="javascript:;" routerLink="/colaboradores">Início</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" (click)="pesquisar=true">
+                        <i *ngIf="!pesquisar" class="material-icons">search</i></a>
+                    </li>
                 </ul>
                 <ul class="right hide-on-med-and-down">
-                    <li class="li-perfil">
-                        <a class="dropdown-button" href="#!" data-activates="dropdown1">Perfil<i class="material-icons right">arrow_drop_down</i></a>
+                    <li class="li-perfil" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="dropdown-button" href="#!" [routerLink]="['/perfil/', idPerfilRoute]" data-activates="dropdown1">Perfil<i class="material-icons right">arrow_drop_down</i></a>
                     </li>
                 </ul>
 
@@ -38,6 +43,7 @@
         </nav>
     </div>
 </div>
+{{ idPerfilRoute }}
 <router-outlet></router-outlet>
 
 
