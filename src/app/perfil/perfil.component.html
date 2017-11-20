@@ -1,3 +1,71 @@
-<p>
-  perfil works!
-</p>
+<div class="container conteudo">
+  <div class="row">
+    <div *ngFor="let colaborador of colaboradores; let i = index" class="col s12 card-colaborador wow flipInX"
+         data-wow-duration="1s" [attr.data-wow-delay]="'0.'+i+'s'" [id]="'card-colaborador-'+i">
+      <div class="card horizontal">
+        <div class="card-image" style="background-color: #444444">
+          <img src="assets/colaboradores/1.jpg" height="250" width="250" alt="">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="card-title">{{ colaborador.nome }}</span>
+            <p class="cargo">{{ colaborador.cargo }}</p>
+            <p class="empresa">{{ colaborador.empresa }}</p>
+            <p><i class="material-icons">free_breakfast</i></p>
+            <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado.</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="card-action habilidades">
+        <div class="chip" *ngFor="let habilidade of habilidades">{{ habilidade}}<i class="close material-icons">close</i></div>
+        <hr class="hr-separacao">
+
+
+        <div class="row">
+          <div class="col s12">
+            <div class="col s6">
+              <div class="item">
+                <i class="material-icons call">call</i>
+              <span> (61) 3625-5390</span>
+              </div>
+              <div class="item">
+                <i class="material-icons call">camera_rear</i>
+                <span> (61) 98419-5908</span>
+              </div>
+              <div class="item">
+                <i class="material-icons call">camera_roll</i>
+                <span> (61) 3625-5390</span>
+              </div>
+            </div>
+
+            <div class="col s6">
+
+              <div class="item">
+                <i class="material-icons call">mail</i>
+                <span> jeanpaulrodrigues@hotmail.com</span>
+              </div>
+
+              <div class="item">
+                <i class="material-icons call">navigate_next</i>
+                <span> facebook.com/jeanpaul</span>
+              </div>
+
+
+              <div class="item">
+                <i class="material-icons call">navigate_next</i>
+                <span>linkdin.com/jeanpaul</span>
+              </div>
+
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

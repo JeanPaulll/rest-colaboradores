@@ -1,0 +1,22 @@
+.cargo,
+.empresa{
+    font-size: small;
+    font-weight: bold;
+}
+.hr-separacao{
+    border: 1px solid #a9baca;
+}
+.habilidades{
+    background-color: white;
+    margin: 0px;
+    margin-top: -16px;
+    padding-top: 20px;
+    padding: 16px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.habilidades .material-icons,
+.habilidades .call{
+    position: relative;
+    top: 6px;
+}

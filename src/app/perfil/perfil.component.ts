@@ -1,34 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {AppComponent} from "../app.component";
 
-@Component({
-  selector: 'app-perfil',
-  templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.css']
-})
+@Component( {
+    selector: 'app-perfil', templateUrl: './perfil.component.html', styleUrls: ['./perfil.component.css']
+} )
 export class PerfilComponent implements OnInit {
 
-  public idPerfil: any;
-  constructor(private activatedRoute: ActivatedRoute) { }
+    public idPerfil: any;
 
-  ngOnInit() {
-      /*** @description Get ID perfil */
-      // this.activatedRoute.params.subscribe(params => {
-      //     console.log('params perfil',params);
-      //     this.idPerfil = +params["id"];
-      //     // AppComponent.setIdPerfilEventEmitter.emit(this.idPerfil);
-      // });
-       this.activatedRoute.params.subscribe(params => {
-          console.log('params', params);
-          const id = +params['id'];
-          if(Object.keys(params).length == 0) return;
-          AppComponent.setIdPerfilEventEmitter.emit(id);
-          // AppComponent.setIdPerfilEventEmitter.emit(id);
-      });
+    constructor(private activatedRoute: ActivatedRoute) {
+    }
+
+    public colaboradores = [{nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"}];
+    public habilidades = ['UX','HTML5','CSS', 'WEB DESIGN', 'PHP','JAVA', 'ANGULARJS','jQuery'];
 
 
+    ngOnInit() {
+        /*** @description Get ID perfil */
+        // this.activatedRoute.params.subscribe(params => {
+        //     console.log('params perfil',params);
+        //     this.idPerfil = +params["id"];
+        //     // AppComponent.setIdPerfilEventEmitter.emit(this.idPerfil);
+        // });
+        this.activatedRoute.params.subscribe( params => {
+            console.log( 'params', params );
+            const id = +params['id'];
+            if (Object.keys( params ).length == 0) return;
+            AppComponent.setIdPerfilEventEmitter.emit( id );
+            // AppComponent.setIdPerfilEventEmitter.emit(id);
+        } );
 
-  }
+
+    }
 
 }
