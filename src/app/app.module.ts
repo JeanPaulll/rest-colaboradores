@@ -8,6 +8,12 @@ import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { ListColaboradoresComponent } from './list-colaboradores/list-colaboradores.component';
+/**
+ * Imports para: Google Maps (AGM)
+ * AIzaSyDY2jvvjH4vZ-yDxnRJYyDzpWqa_0QtQXU
+ * Url Plugin: https://angular-maps.com/guides/getting-started/
+ */
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,10 @@ import { ListColaboradoresComponent } from './list-colaboradores/list-colaborado
     FormsModule,
     MaterializeModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({  // Google Maps (AGM)
+        apiKey: 'AIzaSyDY2jvvjH4vZ-yDxnRJYyDzpWqa_0QtQXU'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

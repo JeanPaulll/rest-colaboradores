@@ -5,7 +5,9 @@
              (click)="setAnimation(i)">
             <div class="card horizontal">
                 <div class="card-image" style="background-color: #444444">
-                    <img src="assets/colaboradores/1.jpg" height="100" width="100" alt="">
+                    <!--<img src="assets/colaboradores/1.jpg" height="100" width="100" alt="">-->
+                    <img *ngIf="i==1" src="assets/colaboradores/jeanpaul.jpg" height="100" width="100" alt="">
+                    <img *ngIf="i!==1" src="assets/colaboradores/1.jpg" height="100" width="100" alt="">
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">

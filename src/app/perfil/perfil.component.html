@@ -4,11 +4,12 @@
          data-wow-duration="1s" [attr.data-wow-delay]="'0.'+i+'s'" [id]="'card-colaborador-'+i">
       <div class="card horizontal">
         <div class="card-image" style="background-color: #444444">
-          <img src="assets/colaboradores/1.jpg" height="250" width="250" alt="">
+          <img *ngIf="idPerfil==1" src="assets/colaboradores/jeanpaul.jpg" height="230" width="230" alt="">
+          <img *ngIf="idPerfil!==1" src="assets/colaboradores/1.jpg" height="230" width="230" alt="">
         </div>
         <div class="card-stacked">
           <div class="card-content">
-            <span class="card-title">{{ colaborador.nome }}</span>
+            <span class="card-title">{{ colaborador.nome }} -  {{idPerfil}}</span>
             <p class="cargo">{{ colaborador.cargo }}</p>
             <p class="empresa">{{ colaborador.empresa }}</p>
             <p><i class="material-icons">free_breakfast</i></p>
@@ -57,10 +58,14 @@
                 <span>linkdin.com/jeanpaul</span>
               </div>
 
-
-
-
             </div>
+            <div class="google-mapas">
+              <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+              </agm-map>
+            </div>
+
+
           </div>
         </div>
 

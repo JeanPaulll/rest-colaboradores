@@ -8,6 +8,8 @@ import {AppComponent} from "../app.component";
 export class PerfilComponent implements OnInit {
 
     public idPerfil: any;
+    lat: number = -15.7964419;
+    lng: number = -47.8855595;
 
     constructor(private activatedRoute: ActivatedRoute) {
     }
@@ -26,6 +28,7 @@ export class PerfilComponent implements OnInit {
         this.activatedRoute.params.subscribe( params => {
             console.log( 'params', params );
             const id = +params['id'];
+            this.idPerfil = id;
             if (Object.keys( params ).length == 0) return;
             AppComponent.setIdPerfilEventEmitter.emit( id );
             // AppComponent.setIdPerfilEventEmitter.emit(id);
