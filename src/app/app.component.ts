@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, EventEmitter, OnInit, ViewEncapsulation} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute,  Router} from "@angular/router";
 
 declare const $: any;
 
@@ -11,10 +11,11 @@ declare const $: any;
 })
 export class AppComponent implements OnInit, AfterViewInit{
 
+    public _loginActive: boolean = false;
     public pesquisar:boolean;
     public idPerfilRoute: number;
     static setIdPerfilEventEmitter: EventEmitter<any> = new EventEmitter();
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute, private activatedRoute: Router) {
         this.pesquisar = false;
         this.idPerfilRoute = 1;
     }
@@ -33,16 +34,14 @@ export class AppComponent implements OnInit, AfterViewInit{
         const self = this;
         AppComponent.setIdPerfilEventEmitter.subscribe(r=>{
             if(!r) return;
-            self.idPerfilRoute = r;
+            if(r == 'login'){
+                self._loginActive = true;
+            }else if(r== 'login_false'){
+                self._loginActive = false;
+            }else{
+                self.idPerfilRoute = r;
+            }
         });
-
-       //  this.route.params.subscribe(params => {
-       //      console.log('params', params);
-       //      const id = +params['id'];
-       //      if(Object.keys(params).length == 0) return;
-       //      AppComponent.setIdPerfilEventEmitter.emit(id);
-       //      // AppComponent.setIdPerfilEventEmitter.emit(id);
-       // });
     }
 
 }

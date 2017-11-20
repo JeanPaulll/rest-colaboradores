@@ -1,6 +1,6 @@
 <div class="container conteudo">
     <div class="row">
-        <div *ngFor="let colaborador of colaboradores; let i = index" class="col s4 card-colaborador wow flipInX"
+        <div *ngFor="let colaborador of colaboradores; let i = index" class="col s12 l4 card-colaborador wow flipInX"
              data-wow-duration="1s" [attr.data-wow-delay]="'0.'+i+'s'" [id]="'card-colaborador-'+i"
              (click)="setAnimation(i)">
             <div class="card horizontal">

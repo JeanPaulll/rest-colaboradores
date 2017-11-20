@@ -1,0 +1,22 @@
+.conteudo{
+    color: #ffffff;
+    margin-top: 60px;
+}
+.container{
+    width: 50%;
+}
+.container.conteudo{
+    min-height: 347px;
+}
+.entre-com{
+    margin-top: 50px;
+   padding-bottom: 30px;
+}
+.facebook{
+    background-color: #4267b2;
+    margin-bottom: 30px;
+}
+.google{
+    background-color: #E74C3C;
+    margin-bottom: 30px;
+}

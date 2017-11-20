@@ -17,22 +17,19 @@ export class PerfilComponent implements OnInit {
     public colaboradores = [{nome: "Jean Paul", cargo: "Desenvolvedor Java", empresa: "Escritório de Inovações"}];
     public habilidades = ['UX','HTML5','CSS', 'WEB DESIGN', 'PHP','JAVA', 'ANGULARJS','jQuery'];
 
-
     ngOnInit() {
         /*** @description Get ID perfil */
-        // this.activatedRoute.params.subscribe(params => {
-        //     console.log('params perfil',params);
-        //     this.idPerfil = +params["id"];
-        //     // AppComponent.setIdPerfilEventEmitter.emit(this.idPerfil);
-        // });
         this.activatedRoute.params.subscribe( params => {
-            console.log( 'params', params );
             const id = +params['id'];
             this.idPerfil = id;
             if (Object.keys( params ).length == 0) return;
-            AppComponent.setIdPerfilEventEmitter.emit( id );
-            // AppComponent.setIdPerfilEventEmitter.emit(id);
-        } );
+            setTimeout(()=> {
+                AppComponent.setIdPerfilEventEmitter.emit( id );
+            });
+        });
+        setTimeout(()=> {
+            AppComponent.setIdPerfilEventEmitter.emit('login_false');
+        });
 
 
     }

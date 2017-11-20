@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import { WOW } from 'wowjs/dist/wow.min';
 import {ActivatedRoute, Router} from "@angular/router";
+import {AppComponent} from "../app.component";
 
 declare const $: any;
 
@@ -63,5 +64,7 @@ export class ListColaboradoresComponent implements OnInit, AfterViewInit {
         });
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+        AppComponent.setIdPerfilEventEmitter.emit('login_false');
+    }
 }

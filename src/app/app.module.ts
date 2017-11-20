@@ -14,12 +14,14 @@ import { ListColaboradoresComponent } from './list-colaboradores/list-colaborado
  * Url Plugin: https://angular-maps.com/guides/getting-started/
  */
 import { AgmCoreModule } from '@agm/core';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PerfilComponent,
-    ListColaboradoresComponent
+    ListColaboradoresComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
